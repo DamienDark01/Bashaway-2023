@@ -1,2 +1,6 @@
 #!/bin/bash
-git log --oneline > out/commits.txt
+if [ -d .git ]; then
+  git log --oneline > out/commits.txt
+else
+  echo "Git repo not initialized" >&2
+fi
